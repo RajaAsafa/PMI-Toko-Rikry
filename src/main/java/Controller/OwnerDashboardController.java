@@ -325,12 +325,15 @@ public class OwnerDashboardController {
             System.out.println("[OwnerDashboard] User logged out");
             
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/LoginView.fxml"));
-            AnchorPane root = fxmlLoader.load();
+            javafx.scene.Parent root = fxmlLoader.load();
             
             Stage stage = (Stage) logoutButton.getScene().getWindow();
             Scene scene = new javafx.scene.Scene(root);
             stage.setScene(scene);
             stage.setTitle("PMITokoZikry - Login");
+            stage.setWidth(900);
+            stage.setHeight(600);
+            stage.centerOnScreen();
             stage.show();
         } catch (IOException e) {
             System.err.println("[OwnerDashboard] Logout error: " + e.getMessage());
